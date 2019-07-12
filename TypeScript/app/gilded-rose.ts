@@ -38,18 +38,12 @@ export class GildedRose {
     }
 
     private updateExpired(item: Item): void {
-        if (item.name != 'Aged Brie') {
-            if (item.name != 'Backstage passes to a TAFKAL80ETC concert') {
-                if (item.quality > 0) {
-                    if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                        item.quality = item.quality - 1
-                    }
-                }
-            } else {
-                item.quality = item.quality - item.quality
-            }
-        } else {
+        if (item.name == 'Aged Brie') {
             this.increaseQuality(item);
+        } else if (item.name == 'Backstage passes to a TAFKAL80ETC concert') {
+            item.quality = 0;
+        } else if (item.name != 'Sulfuras, Hand of Ragnaros' && item.quality > 0) {
+            item.quality = item.quality - 1;
         }
     }
 
