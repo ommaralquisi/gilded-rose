@@ -73,6 +73,9 @@ export class BackstagePass extends ItemCategory {
     }
 }
 
-export class Conjured extends ItemCategory{
-
+export class Conjured extends ItemCategory {
+    updateItemQuality(item: Item): void {
+        this.decreaseQuality(item);
+        this.decreaseQuality(item);
+    }
 }

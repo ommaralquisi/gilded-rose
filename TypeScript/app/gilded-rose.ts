@@ -1,4 +1,4 @@
-import {ItemCategory, Cheese, Based, BackstagePass} from "./ItemCategory";
+import {ItemCategory, Cheese, Based, BackstagePass, Conjured} from "./ItemCategory";
 
 export class Item {
     name: string;
@@ -35,8 +35,11 @@ export class GildedRose {
             return new Cheese()
         } else if (item.name === 'Backstage passes to a TAFKAL80ETC concert') {
             return new BackstagePass();
+        } else if (item.name.startsWith('Conjured')) {
+            return new Conjured();
         } else {
             return new ItemCategory();
+
         }
     }
 }
