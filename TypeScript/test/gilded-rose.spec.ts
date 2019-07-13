@@ -35,6 +35,12 @@ describe("Gilded Rose", function() {
             expect(items[3].sellIn).to.equal(0);
             expect(items[3].quality).to.equal(80);
         });
+
+        it('Conjured sellIn should decrease by 1 and quality should decrease by 2', function () {
+            expect(items[8].name).to.equal('Conjured');
+            expect(items[8].sellIn).to.equal(2);
+            expect(items[8].quality).to.equal(4);
+        })
     });
 
     describe("item after day 2", function() {
@@ -70,6 +76,12 @@ describe("Gilded Rose", function() {
             expect(items[3].sellIn).to.equal(0);
             expect(items[3].quality).to.equal(80);
         });
+
+        it('Conjured sellIn should decrease by 1 and quality should decrease by 2', function () {
+            expect(items[8].name).to.equal('Conjured');
+            expect(items[8].sellIn).to.equal(1);
+            expect(items[8].quality).to.equal(2);
+        })
     });
 });
 
@@ -82,7 +94,8 @@ const createItems = () => {
         new Item("Sulfuras, Hand of Ragnaros", -1, 80),
         new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
         new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49)
+        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+        new Item("Conjured", 3, 6)
     ]);
 };
 
